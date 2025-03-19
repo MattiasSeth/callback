@@ -5,19 +5,22 @@ server:
     key-store-password: 123456
     key-store-type: PKCS12
     key-alias: tomcat
-
 logging:
   level:
     org.apache.coyote.http11: DEBUG
-
-visma:
-  api:
-    base-url: "https://api.visma.net/v1"
-    client-id: "din-client-id"
-    client-secret: "din-client-secret"
-    scope: "din-scope"
-    tokenEndpoint: https://identity.vismaonline.com/connect/token
-    redirect-uri: https://localhost:44300/callback
-
-encryption:
-  key: mysecretkey1234567890abcdefghijk
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          visma:
+            client-id: challengenow1sandbox
+            client-secret: EA$;tc;kpskxRcR2udAGzedOZEQQztdPexFzs9pG7KQyeRJeHXRjmP0tqjfUvnV6
+            redirect-uri: https://localhost:44300/callback
+            scope: ea:api,ea:sales,ea:purchase,ea:accounting,vls:api,offline_access
+            authorization-grant-type: authorization_code
+        provider:
+          visma:
+            authorization-uri: https://identity.vismaonline.com/connect/authorize
+            token-uri: https://identity.vismaonline.com/connect/token
+            user-info-uri: https://identity.vismaonline.com/connect/userinfo

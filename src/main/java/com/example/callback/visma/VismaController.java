@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
-
 import java.util.Base64;
 
 @RestController
 @Slf4j
 @RequiredArgsConstructor
 public class VismaController {
+        /*
         private String clientId = "challengenow1sandbox";
         private String clientSecret = "EA$;tc;kpskxRcR2udAGzedOZEQQztdPexFzs9pG7KQyeRJeHXRjmP0tqjfUvnV6";
         private String redirectUri = "https://localhost:44300/callback";
@@ -53,4 +53,6 @@ public class VismaController {
                     .body("Error exchanging code for token: " + e.getMessage());
         }
     }
+
+         */
 }
